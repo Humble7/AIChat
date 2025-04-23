@@ -11,26 +11,19 @@ struct AppView: View {
     @AppStorage("showTabbarView") var showTabBar: Bool = false
     var body: some View {
         AppViewBuilder(showTabBar: showTabBar, tabbarView: {
-            ZStack {
-                Color.red.ignoresSafeArea()
-                Text("Tabbar")
-            }
+            TabBarView()
         }, onboardingView: {
-            ZStack {
-                Color.blue.ignoresSafeArea()
-                Text("Onboarding")
-            }
+            WelcomeView()
         })
-        .onTapGesture {
-            showTabBar.toggle()
-        }
     }
 }
 
 #Preview("AppView - Tabbar") {
-    AppView(showTabBar: true)
+    UserDefaults.standard.set(true, forKey: "showTabbarView")
+    return AppView()
 }
 
 #Preview("AppView - Onboarding") {
-    AppView(showTabBar: false)
+    UserDefaults.standard.set(false, forKey: "showTabbarView")
+    return AppView()
 }
