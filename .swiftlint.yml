@@ -12,4 +12,3 @@ excluded:
   - .git
   - Pods
   - Carthage
-
