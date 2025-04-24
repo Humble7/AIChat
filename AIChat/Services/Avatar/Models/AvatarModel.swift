@@ -89,7 +89,7 @@ enum CharacterOption: String, CaseIterable, Hashable {
         switch self {
         case .alien:
             return true
-        default :
+        default:
             return false
         }
     }
