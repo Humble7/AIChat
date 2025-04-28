@@ -18,6 +18,12 @@ struct MockAuthService: AuthService {
         currentUser
     }
 
+    func addAuthenticatedUserListener(onListenerAttached: (any NSObjectProtocol) -> Void) -> AsyncStream<UserAuthInfo?> {
+        AsyncStream { continuation in
+            continuation.yield(currentUser)
+        }
+    }
+
     func signInAnonymously() async throws -> (user: UserAuthInfo, isNewUser: Bool) {
         let user = UserAuthInfo.mock(isAnonymous: true)
         return (user, true)
