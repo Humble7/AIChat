@@ -22,12 +22,13 @@ struct AIChatApp: App {
     }
 }
 
-struct  EnvironmentBuilderView<Content: View>: View {
+struct EnvironmentBuilderView<Content: View>: View {
     @ViewBuilder var content: () -> Content
 
     var body: some View {
         content()
             .environment(AuthManager(service: FirebaseAuthService()))
+            .environment(UserManager(service: FirebaseUserService()))
     }
 }
 

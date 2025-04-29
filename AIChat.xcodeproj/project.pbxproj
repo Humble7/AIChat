@@ -11,6 +11,7 @@
 		986C66182DBAF0C100D60220 /* SwiftfulUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 986C66172DBAF0C100D60220 /* SwiftfulUtilities */; };
 		986C67832DBCFCFD00D60220 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 986C67822DBCFCFD00D60220 /* FirebaseAuth */; };
 		986C67902DBD9DD700D60220 /* SignInAppleAsync in Frameworks */ = {isa = PBXBuildFile; productRef = 986C678F2DBD9DD700D60220 /* SignInAppleAsync */; };
+		986C679C2DBF864A00D60220 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 986C679B2DBF864A00D60220 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 				986C67902DBD9DD700D60220 /* SignInAppleAsync in Frameworks */,
 				986C64812DB8BAE800D60220 /* SDWebImageSwiftUI in Frameworks */,
 				986C67832DBCFCFD00D60220 /* FirebaseAuth in Frameworks */,
+				986C679C2DBF864A00D60220 /* FirebaseFirestore in Frameworks */,
 				986C66182DBAF0C100D60220 /* SwiftfulUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +91,7 @@
 				986C63342DB79DBF00D60220 /* AIChat */,
 				986C63422DB79DC200D60220 /* AIChatTests */,
 				986C634C2DB79DC200D60220 /* AIChatUITests */,
+				986C679A2DBF864A00D60220 /* Frameworks */,
 				986C63332DB79DBF00D60220 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +104,13 @@
 				986C63492DB79DC200D60220 /* AIChatUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		986C679A2DBF864A00D60220 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +138,7 @@
 				986C66172DBAF0C100D60220 /* SwiftfulUtilities */,
 				986C67822DBCFCFD00D60220 /* FirebaseAuth */,
 				986C678F2DBD9DD700D60220 /* SignInAppleAsync */,
+				986C679B2DBF864A00D60220 /* FirebaseFirestore */,
 			);
 			productName = AIChat;
 			productReference = 986C63322DB79DBF00D60220 /* AIChat.app */;
@@ -674,6 +685,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 986C678E2DBD9DD700D60220 /* XCRemoteSwiftPackageReference "SignInAppleAsync" */;
 			productName = SignInAppleAsync;
+		};
+		986C679B2DBF864A00D60220 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 986C67812DBCFCFD00D60220 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
