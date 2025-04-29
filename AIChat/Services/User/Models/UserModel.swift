@@ -95,7 +95,7 @@ struct UserModel: Codable {
             ),
             UserModel(
                 userId: "user004",
-                creationDate : Date.now,
+                creationDate: Date.now,
                 didCompletedOnboarding: false,
                 profileColorHex: "#1A535C"
             )
