@@ -91,4 +91,7 @@ fastlane/test_output
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+## Keys
+AIChat/Utilities/Keys.swift
+
 # End of https://www.gitignore.io/api/swift,xcode
