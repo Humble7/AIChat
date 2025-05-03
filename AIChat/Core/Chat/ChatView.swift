@@ -54,7 +54,7 @@ struct ChatView: View {
         do {
             let avatar = try await avatarManger.getAvatar(id: avatarId)
             self.avatar = avatar
-            try? avatarManger.addRecentAvatar(avatar: avatar)
+            try? await avatarManger.addRecentAvatar(avatar: avatar)
         } catch {
             print("Error loading avatar: \(error)")
         }
