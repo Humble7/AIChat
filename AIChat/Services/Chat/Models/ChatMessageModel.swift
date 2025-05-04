@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ChatMessageModel: Identifiable {
+struct ChatMessageModel: Identifiable, Codable {
     let id: String
     let chatId: String
     let authorId: String?
@@ -34,6 +34,15 @@ struct ChatMessageModel: Identifiable {
     func hasBeenSeenBy(userId: String) -> Bool {
         guard let seenByIds else { return false }
         return seenByIds.contains(userId)
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case chatId = "chat_id"
+        case authorId = "author_id"
+        case content
+        case seenByIds = "seen_by_ids"
+        case dateCreated = "date_created"
     }
 
     static func newUserMessage(chatId: String, userId: String, message: AIChatModel) -> Self {
@@ -67,7 +76,7 @@ struct ChatMessageModel: Identifiable {
             ChatMessageModel(
                 id: "msg1",
                 chatId: "chat001",
-                authorId: "user001",
+                authorId: UserAuthInfo.mock().uid,
                 content: AIChatModel(role: .user, message: "Hey, how's it going?"),
                 seenByIds: ["user002", "user003"],
                 dateCreated: Date.now.addingTimeInterval(minutes: -30)
@@ -75,7 +84,7 @@ struct ChatMessageModel: Identifiable {
             ChatMessageModel(
                 id: "msg2",
                 chatId: "chat001",
-                authorId: "user002",
+                authorId: AvatarModel.mock.avatarId,
                 content: AIChatModel(role: .assistant, message: "Pretty good! You?"),
                 seenByIds: ["user001"],
                 dateCreated: Date.now.addingTimeInterval(minutes: -25)
@@ -83,7 +92,7 @@ struct ChatMessageModel: Identifiable {
             ChatMessageModel(
                 id: "msg3",
                 chatId: "chat002",
-                authorId: "user003",
+                authorId: UserAuthInfo.mock().uid,
                 content: AIChatModel(role: .user, message: "Wanna grab lunch later?"),
                 seenByIds: [],
                 dateCreated: Date.now.addingTimeInterval(hours: -1)
@@ -91,7 +100,7 @@ struct ChatMessageModel: Identifiable {
             ChatMessageModel(
                 id: "msg4",
                 chatId: "chat003",
-                authorId: "user004",
+                authorId: AvatarModel.mock.avatarId,
                 content: AIChatModel(role: .assistant, message: "Sure, let's go to the new sushi place."),
                 seenByIds: ["user003"],
                 dateCreated: Date.now
