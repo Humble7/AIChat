@@ -1,11 +1,11 @@
 //
-//  MockUserPersistance.swift
+//  MockUserPersistence.swift
 //  AIChat
 //
 //  Created by ChenZhen on 30/4/25.
 //
 
-struct MockUserPersistance: LocalUserPersistance {
+struct MockUserPersistence: LocalUserPersistence {
     let currentUser: UserModel?
 
     init(user: UserModel? = nil) {

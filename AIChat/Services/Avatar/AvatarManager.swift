@@ -15,7 +15,7 @@ class AvatarManager {
     private let remote: RemoteAvatarService
     private let local: LocalAvatarPersistence
 
-    init(remote: RemoteAvatarService, local: LocalAvatarPersistence = MockLocalAvatarPersistance()) {
+    init(remote: RemoteAvatarService, local: LocalAvatarPersistence = MockLocalAvatarPersistence()) {
         self.remote = remote
         self.local = local
     }
@@ -51,5 +51,14 @@ class AvatarManager {
 
     func getAvatarsForAuthor(userId: String) async throws -> [AvatarModel] {
         try await remote.getAvatarsForAuthor(userId: userId)
+    }
+
+    func removeAuthorIdFromAvatar(avatarId: String) async throws {
+        try await remote.removeAuthorIdFromAvatar(avatarId: avatarId)
+
+    }
+
+    func removeAuthorIdFromAllUserAvatars(userId: String) async throws {
+        try await remote.removeAuthorIdFromAllUserAvatars(userId: userId)
     }
 }
