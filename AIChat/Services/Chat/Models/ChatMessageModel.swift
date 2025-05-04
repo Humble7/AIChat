@@ -11,7 +11,7 @@ struct ChatMessageModel: Identifiable {
     let id: String
     let chatId: String
     let authorId: String?
-    let content: String?
+    let content: AIChatModel?
     let seenByIds: [String]?
     let dateCreated: Date?
 
@@ -19,7 +19,7 @@ struct ChatMessageModel: Identifiable {
         id: String,
         chatId: String,
         authorId: String? = nil,
-        content: String? = nil,
+        content: AIChatModel? = nil,
         seenByIds: [String]? = nil,
         dateCreated: Date? = nil
     ) {
@@ -46,7 +46,7 @@ struct ChatMessageModel: Identifiable {
                 id: "msg1",
                 chatId: "chat001",
                 authorId: "user001",
-                content: "Hey, how's it going?",
+                content: AIChatModel(role: .user, message: "Hey, how's it going?"),
                 seenByIds: ["user002", "user003"],
                 dateCreated: Date.now.addingTimeInterval(minutes: -30)
             ),
@@ -54,7 +54,7 @@ struct ChatMessageModel: Identifiable {
                 id: "msg2",
                 chatId: "chat001",
                 authorId: "user002",
-                content: "Pretty good! You?",
+                content: AIChatModel(role: .assistant, message: "Pretty good! You?"),
                 seenByIds: ["user001"],
                 dateCreated: Date.now.addingTimeInterval(minutes: -25)
             ),
@@ -62,7 +62,7 @@ struct ChatMessageModel: Identifiable {
                 id: "msg3",
                 chatId: "chat002",
                 authorId: "user003",
-                content: "Wanna grab lunch later?",
+                content: AIChatModel(role: .user, message: "Wanna grab lunch later?"),
                 seenByIds: [],
                 dateCreated: Date.now.addingTimeInterval(hours: -1)
             ),
@@ -70,7 +70,7 @@ struct ChatMessageModel: Identifiable {
                 id: "msg4",
                 chatId: "chat003",
                 authorId: "user004",
-                content: "Sure, let's go to the new sushi place.",
+                content: AIChatModel(role: .assistant, message: "Sure, let's go to the new sushi place."),
                 seenByIds: ["user003"],
                 dateCreated: Date.now
             )
