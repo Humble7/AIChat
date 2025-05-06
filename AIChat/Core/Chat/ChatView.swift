@@ -18,8 +18,7 @@ struct ChatView: View {
     @State private var chatMessages: [ChatMessageModel] = []
     @State private var avatar: AvatarModel?
     @State private var currentUser: UserModel?
-    @State private var chat: ChatModel?
-    
+
     @State private var textFieldText: String = ""
 
     @State private var scrollPosition: String?
@@ -30,7 +29,8 @@ struct ChatView: View {
     @State private var messageListener: ListenerRegistration?
 
     var avatarId: String = AvatarModel.mock.avatarId
-    
+    @State var chat: ChatModel?
+
     var body: some View {
         VStack(spacing: 8) {
             scrollViewSection
@@ -112,7 +112,7 @@ struct ChatView: View {
                 messageListener?.remove()
                 messageListener = listener
             }) {
-                chatMessages = value.sorted(by: { $0.dateCreatedCalculated < $1.dateCreatedCalculated })
+                chatMessages = value.sortedByKeyPath(keyPath: \.dateCreatedCalculated, ascending: true)
                 scrollPosition = chatMessages.last?.id
             }
         } catch {
