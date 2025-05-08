@@ -62,4 +62,5 @@ struct CreateAccountView: View {
 
 #Preview {
     CreateAccountView()
+        .previewEnvironment()
 }
