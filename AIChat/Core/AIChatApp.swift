@@ -14,13 +14,12 @@ struct AIChatApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            RootView()
-//            AppView()
-//                .environment(delegate.dependencies.chatManager)
-//                .environment(delegate.dependencies.aiManager)
-//                .environment(delegate.dependencies.avatarManager)
-//                .environment(delegate.dependencies.userManager)
-//                .environment(delegate.dependencies.authManager)
+            AppView()
+                .environment(delegate.dependencies.chatManager)
+                .environment(delegate.dependencies.aiManager)
+                .environment(delegate.dependencies.avatarManager)
+                .environment(delegate.dependencies.userManager)
+                .environment(delegate.dependencies.authManager)
         }
     }
 }

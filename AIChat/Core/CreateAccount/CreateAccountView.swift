@@ -30,11 +30,16 @@ struct CreateAccountView: View {
 
             SignInWithAppleButtonView(
                 type: .signIn,
-                style: .black, cornerRadius: 10)
+                style: .black, cornerRadius: 28)
             .frame(height: 55)
             .anyButton(.press) {
                 onSignInApplePressed()
             }
+ 
+            SignInWithGoogleButtonView()
+                .anyButton(.press) {
+                    onSignInGooglePressed()
+                }
 
             Spacer()
         }
@@ -55,6 +60,23 @@ struct CreateAccountView: View {
                 dismiss()
             } catch {
                 print("Error signing in with Apple")
+            }
+        }
+    }
+
+    func onSignInGooglePressed() {
+        Task {
+            do {
+                let result = try await authManager.signInGoogle()
+                print("Did sign in with Google! \(result.user.uid)")
+
+                try await userManager.logIn(auth: result.user, isNewUser: result.isNewUser)
+                print("Did log in")
+
+                onDidSignIn?(result.isNewUser)
+                dismiss()
+            } catch {
+                print("Error signing in with Google")
             }
         }
     }

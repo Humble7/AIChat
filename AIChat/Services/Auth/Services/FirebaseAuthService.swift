@@ -67,8 +67,26 @@ struct FirebaseAuthService: AuthService {
         }
 
         // Otherwise sign in to new account
-        let result = try await Auth.auth().signIn(with: credential)
+        let result = try await signIn(credential: credential)
         return result.asAuthInfo
+    }
+
+    func signInGoogle() async throws -> (user: UserAuthInfo, isNewUser: Bool) {
+        let helper = SignInGoogleHelper()
+        let tokens = try await helper.signIn()
+        let result = try await signInWithGoogle(tokens: tokens)
+        return result.asAuthInfo
+    }
+
+    private func signInWithGoogle(tokens: GoogleSignResultModel) async throws -> AuthDataResult {
+        let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken,
+                                                       accessToken: tokens.accessToken)
+        return try await signIn(credential: credential)
+    }
+
+    private func signIn(credential: AuthCredential) async throws -> AuthDataResult {
+        let authDataResult = try await Auth.auth().signIn(with: credential)
+        return authDataResult
     }
 
     func signOut() throws {

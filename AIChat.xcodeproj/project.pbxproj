@@ -15,6 +15,9 @@
 		986C679F2DC0C33700D60220 /* SwiftfulFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 986C679E2DC0C33700D60220 /* SwiftfulFirestore */; };
 		986C67BA2DC2300700D60220 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 986C67B92DC2300700D60220 /* OpenAI */; };
 		986C687D2DC2EE6000D60220 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 986C687C2DC2EE6000D60220 /* FirebaseStorage */; };
+		98D2A08B2DCCA30E005AECE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98D2A08A2DCCA30E005AECE3 /* GoogleService-Info.plist */; };
+		98D2A08E2DCCA679005AECE3 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 98D2A08D2DCCA679005AECE3 /* GoogleSignIn */; };
+		98D2A0902DCCA679005AECE3 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 98D2A08F2DCCA679005AECE3 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +41,25 @@
 		986C63322DB79DBF00D60220 /* AIChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		986C633F2DB79DC200D60220 /* AIChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		986C63492DB79DC200D60220 /* AIChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98D2A08A2DCCA30E005AECE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		98D2A0922DCCA6C8005AECE3 /* Exceptions for "AIChat" folder in "AIChat" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 986C63312DB79DBF00D60220 /* AIChat */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		986C63342DB79DBF00D60220 /* AIChat */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				98D2A0922DCCA6C8005AECE3 /* Exceptions for "AIChat" folder in "AIChat" target */,
+			);
 			path = AIChat;
 			sourceTree = "<group>";
 		};
@@ -68,9 +85,11 @@
 				986C679F2DC0C33700D60220 /* SwiftfulFirestore in Frameworks */,
 				986C67832DBCFCFD00D60220 /* FirebaseAuth in Frameworks */,
 				986C67BA2DC2300700D60220 /* OpenAI in Frameworks */,
+				98D2A0902DCCA679005AECE3 /* GoogleSignInSwift in Frameworks */,
 				986C687D2DC2EE6000D60220 /* FirebaseStorage in Frameworks */,
 				986C679C2DBF864A00D60220 /* FirebaseFirestore in Frameworks */,
 				986C66182DBAF0C100D60220 /* SwiftfulUtilities in Frameworks */,
+				98D2A08E2DCCA679005AECE3 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +118,7 @@
 				986C634C2DB79DC200D60220 /* AIChatUITests */,
 				986C679A2DBF864A00D60220 /* Frameworks */,
 				986C63332DB79DBF00D60220 /* Products */,
+				98D2A08A2DCCA30E005AECE3 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +168,8 @@
 				986C679E2DC0C33700D60220 /* SwiftfulFirestore */,
 				986C67B92DC2300700D60220 /* OpenAI */,
 				986C687C2DC2EE6000D60220 /* FirebaseStorage */,
+				98D2A08D2DCCA679005AECE3 /* GoogleSignIn */,
+				98D2A08F2DCCA679005AECE3 /* GoogleSignInSwift */,
 			);
 			productName = AIChat;
 			productReference = 986C63322DB79DBF00D60220 /* AIChat.app */;
@@ -238,6 +260,7 @@
 				986C678E2DBD9DD700D60220 /* XCRemoteSwiftPackageReference "SignInAppleAsync" */,
 				986C679D2DC0C33700D60220 /* XCRemoteSwiftPackageReference "SwiftfulFirestore" */,
 				986C67B82DC2300700D60220 /* XCRemoteSwiftPackageReference "OpenAI" */,
+				98D2A08C2DCCA679005AECE3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 986C63332DB79DBF00D60220 /* Products */;
@@ -256,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D2A08B2DCCA30E005AECE3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,10 +487,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4XJGQ5TZUJ;
+				DEVELOPMENT_TEAM = PB9P2XDGFB;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AIChat/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "AI Chat";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -499,10 +524,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4XJGQ5TZUJ;
+				DEVELOPMENT_TEAM = PB9P2XDGFB;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AIChat/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "AI Chat";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -690,6 +716,14 @@
 				version = 0.3.0;
 			};
 		};
+		98D2A08C2DCCA679005AECE3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -732,6 +766,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 986C67812DBCFCFD00D60220 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		98D2A08D2DCCA679005AECE3 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D2A08C2DCCA679005AECE3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		98D2A08F2DCCA679005AECE3 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D2A08C2DCCA679005AECE3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

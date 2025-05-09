@@ -47,6 +47,10 @@ class AuthManager {
         try await service.signInApple()
     }
 
+    func signInGoogle() async throws -> (user: UserAuthInfo, isNewUser: Bool) {
+        try await service.signInGoogle()
+    }
+
     func signOut() throws {
         try service.signOut()
         auth = nil
