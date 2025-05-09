@@ -34,6 +34,11 @@ struct MockAuthService: AuthService {
         return (user, false)
     }
 
+    func signInGoogle() async throws -> (user: UserAuthInfo, isNewUser: Bool) {
+        let user = UserAuthInfo.mock(isAnonymous: true)
+        return (user, false)
+    }
+
     func signOut() throws {
 
     }
