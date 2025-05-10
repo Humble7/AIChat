@@ -10,6 +10,10 @@ import SwiftfulFirestore
 
 typealias ListenerRegistration = FirebaseFirestore.ListenerRegistration
 
+struct AnyListener: @unchecked Sendable {
+    let listener: ListenerRegistration
+}
+
 struct FirebaseUserService: RemoteUserService {
     var collection: CollectionReference {
         Firestore.firestore().collection("users")

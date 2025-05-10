@@ -16,35 +16,34 @@ struct ProfileModalView: View {
     var onXMarkPressed: () -> Void = {}
 
     var body: some View {
-        VStack(spacing: 0) {
-            if let imageName {
-                ImageLoaderView(urlString: imageName, forceTransitionAnimation: true)
-                    .aspectRatio(1, contentMode: .fit)
+        ZStack(alignment: .topTrailing) {
+            VStack(spacing: 0) {
+                if let imageName {
+                    ImageLoaderView(urlString: imageName, forceTransitionAnimation: true)
+                        .aspectRatio(1, contentMode: .fit)
+                }
+
+                VStack(alignment: .leading, spacing: 4) {
+                    if let title {
+                        Text(title)
+                            .font(.title)
+                            .fontWeight(.semibold)
+                    }
+                    if let subtitle {
+                        Text(subtitle)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                    if let headline {
+                        Text(headline)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .padding(24)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
 
-            VStack(alignment: .leading, spacing: 4) {
-                if let title {
-                    Text(title)
-                        .font(.title)
-                        .fontWeight(.semibold)
-                }
-                if let subtitle {
-                    Text(subtitle)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-                if let headline {
-                    Text(headline)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-            }
-            .padding(24)
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .background(.thinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .overlay(
             Image(systemName: "xmark.circle.fill")
             .font(.title)
             .foregroundStyle(.black)
@@ -53,9 +52,10 @@ struct ProfileModalView: View {
             .anyButton {
                 onXMarkPressed()
             }
-            .padding(8),
-            alignment: .topTrailing
-        )
+            .padding(8)
+        }
+        .background(.thinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
 }
 
