@@ -1,0 +1,18 @@
+//
+//  Dev.xcconfig
+//  AIChat
+//
+//  Created by ChenZhen on 11/5/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+#include "Base.xcconfig"
+
+PRODUCT_BUNDLE_NAME = $(inherited) - Dev
+PRODUCT_BUNDLE_IDENTIFIER = $(BASE_BUNDLE_ID).dev
+
+API_BASE_URL = https://api-dev.example.com
+APP_ICON_NAME = AppIconDev
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV

@@ -1,0 +1,18 @@
+//
+//  Mock.xcconfig
+//  AIChat
+//
+//  Created by ChenZhen on 11/5/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+#include "Base.xcconfig"
+
+PRODUCT_BUNDLE_NAME = $(inherited) - Mock
+PRODUCT_BUNDLE_IDENTIFIER = $(BASE_BUNDLE_ID).mock
+
+API_BASE_URL = https://api-mock.example.com
+APP_ICON_NAME = AppIconMock
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = MOCK
