@@ -15,8 +15,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>CFBundleVersion</key>
-	<string>$(PRODUCT_VERSION)</string>
 	<key>GIDClientID</key>
 	<string>511139724333-ero8ov8u1ve5t2rtpdfm9s7p9lhqqnns.apps.googleusercontent.com</string>
 </dict>
